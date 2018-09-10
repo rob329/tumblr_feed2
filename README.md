@@ -26,7 +26,7 @@ The following **additional** user stories are implemented:
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1. I would want to extend the app to include the description/story to go with the images.
-2. Implment a way to review and favorite an image.
+2. Implement a way to review and favorite an image.
 
 ## Video Walkthrough
 
@@ -38,7 +38,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+There were several challenges that I cam across when creating this app. The first was understanding how to get rid of outlets. I had a problem where there were two outlets to the same UIImageView. Additionally, I had some difficulty scaling the image to fit within my app. This was resolved by simple trial and error. 
 
 ## License
 
