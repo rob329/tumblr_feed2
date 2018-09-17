@@ -11,10 +11,11 @@ import AlamofireImage
 
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var posts: [[String: Any]] = []
-
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    var posts: [[String: Any]] = []
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         task.resume()
-
+        
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -48,12 +49,12 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tumblrViewCell", for: indexPath) as! tumblrViewCell
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
         if let photos = post["photos"] as? [[String: Any]] {
             // photos is NOT nil, we can use it!
             let photo = photos[0]
@@ -66,22 +67,37 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         
         return cell
     }
-
-
+    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let post = posts[indexPath.row]
+            let photoDetailsViewController = segue.destination as! PhotoDetailsViewController
+            photoDetailsViewController.post = post
+        }
+    } 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    */
-
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+       return posts.count
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
