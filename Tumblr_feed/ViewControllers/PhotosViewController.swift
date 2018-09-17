@@ -49,12 +49,12 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tumblrViewCell", for: indexPath) as! tumblrViewCell
-        let post = posts[indexPath.section]
+        let post = posts[indexPath.row]
         if let photos = post["photos"] as? [[String: Any]] {
             // photos is NOT nil, we can use it!
             let photo = photos[0]
@@ -69,6 +69,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
         let cell = sender as! UITableViewCell
         if let indexPath = tableView.indexPath(for: cell){
             let post = posts[indexPath.row]
