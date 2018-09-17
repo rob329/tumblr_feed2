@@ -55,17 +55,17 @@ There were several challenges that I cam across when creating this app. The firs
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-# Lab 2 - *Name of App Here*
+# Lab 2 - *Tumblr_feed*
 
-**Name of your app** is a photo browsing app app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
+**Tumblr_feed** is a photo browsing app app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
-Time spent: **X** hours spent in total
+Time spent: **3** hours spent in total
 
 ## User Stories
 
 The following **required** user stories are complete:
 
-- [ ] User can tab an image to view a larger image in a detail view (5pts)
+- [x] User can tab an image to view a larger image in a detail view (5pts)
 
 The following **stretch** user stories are implemented:
 
@@ -79,24 +79,24 @@ The following **additional** user stories are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. I think the ability to write comments would be cool to explore.
+2. Extend to save photos you like in a different tab.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![tumblr_gif2](https://user-images.githubusercontent.com/22280621/45652783-57c49b80-ba9b-11e8-883d-be0d2ff3f9a3.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The only challenge I had was making the UI spacing appear nice and pretty.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2018] [Robert Bolt]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
